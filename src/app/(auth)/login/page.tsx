@@ -78,8 +78,7 @@ export default function LoginPage() {
               required
               placeholder="demo123"
               value={password}
-              onChange={(e) => setPassword(e.targe
-t.value)}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           {/* Display error message if any */}
