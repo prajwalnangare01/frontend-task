@@ -37,6 +37,7 @@ export default function LoginPage() {
    * It calls the login function and redirects to the dashboard on success,
    * or displays an error message on failure.
    */
+<<<<<<< HEAD
   const handleLogin = () => {
     // Attempt to log in with the provided email and password
     const { success, message } = login(email, password);
@@ -46,6 +47,18 @@ export default function LoginPage() {
     } else {
       // Otherwise, set the error message
       setError(message || 'An error occurred.');
+=======
+  const handleLogin = async () => {
+    setError(''); // Clear any previous errors
+    // Attempt to log in with the provided email and password
+    const result = await login(email, password);
+    // If login is successful, redirect to the dashboard
+    if (result.success) {
+      router.push('/dashboard');
+    } else {
+      // Otherwise, set the error message
+      setError(result.message || 'An error occurred.');
+>>>>>>> 22e67dc (done)
     }
   };
 

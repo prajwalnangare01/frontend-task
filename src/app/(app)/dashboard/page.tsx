@@ -109,7 +109,11 @@ export default function DashboardPage() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
+<<<<<<< HEAD
     }, 1500);
+=======
+    }, 400); // 300-500ms skeleton as per requirements
+>>>>>>> 22e67dc (done)
     // Cleanup the timer on component unmount
     return () => clearTimeout(timer);
   }, []);

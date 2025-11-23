@@ -30,8 +30,13 @@ function Header() {
    * Handles the user logout process.
    * It calls the logout function and redirects the user to the login page.
    */
+<<<<<<< HEAD
   const handleLogout = () => {
     logout();
+=======
+  const handleLogout = async () => {
+    await logout();
+>>>>>>> 22e67dc (done)
     router.push('/login');
   };
 
@@ -64,6 +69,7 @@ export default function AppLayout({
 }: {
   children: React.ReactNode;
 }) {
+<<<<<<< HEAD
   // Get authentication status from the authentication store
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
   // Hook to programmatically navigate between pages
@@ -77,6 +83,41 @@ export default function AppLayout({
   }, [isAuthenticated, router]);
 
   // If the user is not authenticated, render nothing (or a loading spinner)
+=======
+  // Get authentication status and check function from the authentication store
+  const { isAuthenticated, isLoading, checkAuth } = useAuthStore((state) => ({
+    isAuthenticated: state.isAuthenticated,
+    isLoading: state.isLoading,
+    checkAuth: state.checkAuth,
+  }));
+  // Hook to programmatically navigate between pages
+  const router = useRouter();
+
+  // Effect to check authentication status on mount
+  useEffect(() => {
+    checkAuth();
+  }, [checkAuth]);
+
+  // Effect to redirect to the login page if the user is not authenticated
+  useEffect(() => {
+    if (!isLoading && !isAuthenticated) {
+      router.push('/login');
+    }
+  }, [isAuthenticated, isLoading, router]);
+
+  // Show loading state while checking authentication
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <p>Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // If the user is not authenticated, render nothing (redirect will happen)
+>>>>>>> 22e67dc (done)
   if (!isAuthenticated) {
     return null;
   }
