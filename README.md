@@ -84,11 +84,7 @@ If not set, a default secret is used (not recommended for production).
 
 ### Deploy URL
 
-[Add your latest deploy URL here]
+[[Add your latest deploy URL here]](https://frontend-task-seven-mauve.vercel.app/login)
 
-## Stuck Log
 
-This section is for you to document any challenges you face during the development process.
-
-*   ...
 
