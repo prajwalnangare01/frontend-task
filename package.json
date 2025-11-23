@@ -19,7 +19,11 @@
     "clsx": "^2.1.1",
     "jose": "^6.1.2",
     "lucide-react": "^0.378.0",
+<<<<<<< HEAD
     "next": "^14.2.33",
+=======
+    "next": "14.2.3",
+>>>>>>> 451689dd034250e99ab690166c87f1a66b2a3c2a
     "react": "^18",
     "react-dom": "^18",
     "tailwind-merge": "^2.3.0",
@@ -32,7 +36,11 @@
     "@types/react-dom": "^18",
     "autoprefixer": "^10.4.22",
     "eslint": "^8",
+<<<<<<< HEAD
     "eslint-config-next": "^16.0.3",
+=======
+    "eslint-config-next": "14.2.3",
+>>>>>>> 451689dd034250e99ab690166c87f1a66b2a3c2a
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"

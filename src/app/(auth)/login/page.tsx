@@ -37,6 +37,20 @@ export default function LoginPage() {
    * It calls the login function and redirects to the dashboard on success,
    * or displays an error message on failure.
    */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  const handleLogin = () => {
+    // Attempt to log in with the provided email and password
+    const { success, message } = login(email, password);
+    // If login is successful, redirect to the dashboard
+    if (success) {
+      router.push('/dashboard');
+    } else {
+      // Otherwise, set the error message
+      setError(message || 'An error occurred.');
+=======
+>>>>>>> 451689dd034250e99ab690166c87f1a66b2a3c2a
   const handleLogin = async () => {
     setError(''); // Clear any previous errors
     // Attempt to log in with the provided email and password
@@ -47,6 +61,10 @@ export default function LoginPage() {
     } else {
       // Otherwise, set the error message
       setError(result.message || 'An error occurred.');
+<<<<<<< HEAD
+=======
+>>>>>>> 22e67dc (done)
+>>>>>>> 451689dd034250e99ab690166c87f1a66b2a3c2a
     }
   };
 

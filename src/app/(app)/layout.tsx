@@ -30,8 +30,18 @@ function Header() {
    * Handles the user logout process.
    * It calls the logout function and redirects the user to the login page.
    */
+<<<<<<< HEAD
   const handleLogout = async () => {
     await logout();
+=======
+<<<<<<< HEAD
+  const handleLogout = () => {
+    logout();
+=======
+  const handleLogout = async () => {
+    await logout();
+>>>>>>> 22e67dc (done)
+>>>>>>> 451689dd034250e99ab690166c87f1a66b2a3c2a
     router.push('/login');
   };
 
@@ -64,6 +74,25 @@ export default function AppLayout({
 }: {
   children: React.ReactNode;
 }) {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  // Get authentication status from the authentication store
+  const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
+  // Hook to programmatically navigate between pages
+  const router = useRouter();
+
+  // Effect to redirect to the login page if the user is not authenticated
+  useEffect(() => {
+    if (!isAuthenticated) {
+      router.push('/login');
+    }
+  }, [isAuthenticated, router]);
+
+  // If the user is not authenticated, render nothing (or a loading spinner)
+=======
+  // Get authentication status and check function from the authentication store
+>>>>>>> 451689dd034250e99ab690166c87f1a66b2a3c2a
   const { isAuthenticated, isLoading, checkAuth } = useAuthStore((state) => ({
     isAuthenticated: state.isAuthenticated,
     isLoading: state.isLoading,
@@ -96,6 +125,10 @@ export default function AppLayout({
   }
 
   // If the user is not authenticated, render nothing (redirect will happen)
+<<<<<<< HEAD
+=======
+>>>>>>> 22e67dc (done)
+>>>>>>> 451689dd034250e99ab690166c87f1a66b2a3c2a
   if (!isAuthenticated) {
     return null;
   }

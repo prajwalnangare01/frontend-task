@@ -100,16 +100,36 @@ function AddCreditsModal() {
  * It displays user's credit information and provides an option to add more credits.
  */
 export default function DashboardPage() {
+<<<<<<< HEAD
   const [loading, setLoading] = useState(true);
   const { credits, spentThisMonth, activeThreads } = useAuthStore();
 
   useEffect(() => {
     const t = setTimeout(() => setLoading(false), 400);
     return () => clearTimeout(t);
+=======
+  // State to manage the loading status of the dashboard data
+  const [loading, setLoading] = useState(true);
+  // Destructure state values from the authentication store
+  const { credits, spentThisMonth, activeThreads } = useAuthStore();
+
+  // Effect to simulate loading data on component mount
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+<<<<<<< HEAD
+    }, 1500);
+=======
+    }, 400); // 300-500ms skeleton as per requirements
+>>>>>>> 22e67dc (done)
+    // Cleanup the timer on component unmount
+    return () => clearTimeout(timer);
+>>>>>>> 451689dd034250e99ab690166c87f1a66b2a3c2a
   }, []);
 
   return (
     <div className="p-8">
+<<<<<<< HEAD
       {loading ? (
         <div className="grid grid-cols-3 gap-4">
           <Skeleton className="h-24" />
@@ -117,6 +137,18 @@ export default function DashboardPage() {
           <Skeleton className="h-24" />
         </div>
       ) : (
+=======
+      {/* Conditional rendering based on the loading state */}
+      {loading ? (
+        // Display skeleton loaders while data is being fetched
+        <div className="grid gap-4 md:grid-cols-3">
+          <Skeleton className="h-32" />
+          <Skeleton className="h-32" />
+          <Skeleton className="h-32" />
+        </div>
+      ) : (
+        // Display the actual data cards once loading is complete
+>>>>>>> 451689dd034250e99ab690166c87f1a66b2a3c2a
         <div className="grid gap-4 md:grid-cols-3">
           <Card>
             <CardHeader>
@@ -144,6 +176,10 @@ export default function DashboardPage() {
           </Card>
         </div>
       )}
+<<<<<<< HEAD
+=======
+      {/* Section to add more credits */}
+>>>>>>> 451689dd034250e99ab690166c87f1a66b2a3c2a
       <div className="mt-8">
         <AddCreditsModal />
       </div>

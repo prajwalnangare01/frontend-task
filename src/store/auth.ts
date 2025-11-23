@@ -8,24 +8,73 @@ interface AuthState {
   credits: number; // Stores the user's current credit balance
   spentThisMonth: number; // Stores the amount spent by the user this month
   activeThreads: number; // Stores the number of active threads for the user
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  login: (email: string, pass: string) => { success: boolean; message?: string }; // Function to handle user login
+  logout: () => void; // Function to handle user logout
+=======
+>>>>>>> 451689dd034250e99ab690166c87f1a66b2a3c2a
   isLoading: boolean; // Indicates if authentication check is in progress
   login: (email: string, password: string) => Promise<{ success: boolean; message?: string }>; // Function to handle user login
   logout: () => Promise<void>; // Function to handle user logout
   checkAuth: () => Promise<void>; // Function to check authentication status
+<<<<<<< HEAD
+=======
+>>>>>>> 22e67dc (done)
+>>>>>>> 451689dd034250e99ab690166c87f1a66b2a3c2a
   addCredits: (amount: number) => void; // Function to add credits to the user's account
 }
 
 /**
  * The authentication store created using Zustand.
  * It manages the state and actions related to user authentication and account information.
+<<<<<<< HEAD
  */
 export const useAuthStore = create<AuthState>((set, get) => ({
+=======
+<<<<<<< HEAD
+ */
+export const useAuthStore = create<AuthState>((set) => ({
+=======
+ * Uses JWT tokens stored in httpOnly cookies for secure authentication.
+ */
+export const useAuthStore = create<AuthState>((set, get) => ({
+>>>>>>> 22e67dc (done)
+>>>>>>> 451689dd034250e99ab690166c87f1a66b2a3c2a
   // Initial state values
   isAuthenticated: false,
   userEmail: '',
   credits: 5000,
   spentThisMonth: 1500,
   activeThreads: 10,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+  /**
+   * Logs in the user if the provided credentials are correct.
+   * @param {string} email - The user's email.
+   * @param {string} password - The user's password.
+   * @returns {object} An object indicating success or failure.
+   */
+  login: (email, password) => {
+    // Check for hardcoded credentials (for demo purposes)
+    if (email === 'demo@browza.in' && password === 'demo123') {
+      // If credentials are correct, update the state to be authenticated
+      set({ isAuthenticated: true, userEmail: email });
+      return { success: true };
+    }
+    // If credentials are incorrect, return a failure message
+    return { success: false, message: 'Invalid email or password.' };
+  },
+
+  /**
+   * Logs out the user by resetting the authentication state.
+   */
+  logout: () => set({ isAuthenticated: false, userEmail: '' }),
+=======
+>>>>>>> 451689dd034250e99ab690166c87f1a66b2a3c2a
   isLoading: true,
 
   /**
@@ -112,6 +161,10 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       set({ isAuthenticated: false, userEmail: '' });
     }
   },
+<<<<<<< HEAD
+=======
+>>>>>>> 22e67dc (done)
+>>>>>>> 451689dd034250e99ab690166c87f1a66b2a3c2a
 
   /**
    * Adds a specified amount to the user's credit balance.
